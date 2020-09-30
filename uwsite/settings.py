@@ -25,7 +25,7 @@ SECRET_KEY = 'rlt4&f+(m_5ur6ii$f0b4nrq&8gmzwrqgdt(t=#cl&v_wga#^*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['konfle.pythonanywhere.com']
+ALLOWED_HOSTS = ['konfle.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition

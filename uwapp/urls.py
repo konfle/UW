@@ -8,5 +8,5 @@ urlpatterns = [
     path('o-nas/', views.about, name='about'),
     path('projekty/', views.projects, name='projects'),
     path('galeria/', views.gallery, name='gallery'),
-    path('kontakt/', views.contact, name='contact'),
+    path('kontakt/', views.contact_us, name='contact'),
     ]

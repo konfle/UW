@@ -1,0 +1,52 @@
+{% extends 'uwapp/base.html' %}<!DOCTYPE html>
+{% load static %}
+{% block content %}
+              <div class="heading">
+                <h1>Już dziś!</h1>
+                <span>Rozwiń z nami swoje skrzydła!</span>
+              </div>
+              <div class="cd-half-width third-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content third-content">
+                        <div class="row">
+                          <div class="col-md-7 left-image">
+                            <img src="{% static 'img/left-feature-image.png' %}">
+                          </div>
+                          <div class="col-md-5">
+                            <div class="right-feature-text">
+                              <h4>Nasze Aktualne: <em>Projekty</em></h4>
+                              <p>Oferujemy szeroki zakres kursów i projektów. Sprawdź jakie projekty są dostępne teraz.
+                              Jeśli jesteś zainteresowany nie czekaj! Może to właśnie dziś rozpoczniesz swoją nową
+                                ścieżkę zawodową.</p>
+                              <div class="feature-list">
+                                {% for post in posts %}
+                                  <div>
+                                    <h4><em>{{ post.title }}</em></h4>
+                                    <p>{{ post.text|linebreaksbr }}</p>
+                                    <p>Opublikowano dnia {{ post.data_opublikowania }}</p>
+                                  </div>
+                                {% endfor %}
+                                <!--
+                                  <ul>
+                                    <p>- cos tam cos tam</p>
+                                    <p>- Pellentesque et urna vel lectus</p>
+                                    <p>- Vestibulum iaculis nisi dui</p>
+                                    <p>- Donec sagittis eros , ac tempus ligula</p>
+                                    <p>- Integer sapien risus, auctor</p>
+                                  </ul>
+                                  -->
+                              </div>
+                              <div class="primary-button">
+                                <a href="#">Odkryj więcej</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+{% endblock %}

@@ -21,6 +21,7 @@ https://templatemo.com/tm-503-newline
         <link rel="stylesheet" href="{% static 'css/fontAwesome.css' %}">
         <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'bjax/bjax.min.css' %}" type="text/css" />
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -43,11 +44,11 @@ https://templatemo.com/tm-503-newline
             <nav>
               <span class="cd-marker item-1"></span>
               <ul>
-                <li class="selected"><a href="#0"><div class="image-icon"><img src="{% static 'img/home-icon.png' %}"></div><h6>Witaj!</h6></a></li>
-                <li><a href="#0"><div class="image-icon"><img src="{% static 'img/about-icon.png' %}"></div><h6>O nas</h6></a></li>
-                <li><a href="#0"><div class="image-icon"><img src="{% static 'img/featured-icon.png' %}"></div><h6>Projekty</h6></a></li>
-                <li><a href="#0"><div class="image-icon"><img src="{% static 'img/projects-icon.png' %}"></div><h6>Galeria</h6></a></li>
-                <li><a href="#0"><div class="image-icon"><img src="{% static 'img/contact-icon.png' %}"></div><h6>Kontakt</h6></a></li>
+                <li class="selected"><a href="{% url 'uwapp:index' %}" data-target="#content" data-bjax><div class="image-icon"><img src="{% static 'img/home-icon.png' %}"></div><h6>Witaj!</h6></a></li>
+                <li><a href="{% url 'uwapp:about' %}" data-target="#content" data-bjax><div class="image-icon"><img src="{% static 'img/about-icon.png' %}"></div><h6>O nas</h6></a></li>
+                <li><a href="{% url 'uwapp:projects' %}" data-target="#content" data-bjax><div class="image-icon"><img src="{% static 'img/featured-icon.png' %}"></div><h6>Projekty</h6></a></li>
+                <li><a href="{% url 'uwapp:gallery' %}" data-target="#content" data-bjax><div class="image-icon"><img src="{% static 'img/projects-icon.png' %}"></div><h6>Galeria</h6></a></li>
+                <li><a href="{% url 'uwapp:contact' %}" data-target="#content" data-bjax><div class="image-icon"><img src="{% static 'img/contact-icon.png' %}"></div><h6>Kontakt</h6></a></li>
               </ul>
             </nav> 
           </div> <!-- .cd-slider-nav -->
@@ -95,7 +96,8 @@ https://templatemo.com/tm-503-newline
                           <div class="col-md-5">
                             <div class="right-about-text">
                               <h4>Kim jesteśmy?</h4>
-                              <p>Fusce neque leo, dapibus sed imperdiet sed, vulputate sed purus. Nam eget justo in nibh facilisis rhoncus. Donec et risus non mauris lobortis convallis. Aliquam id urna quis ante blandit semper.</p>
+                              <p>Nasze centrum szkoleniowe kształci niezależnie od wieku! Nasi prelegencji to ludzie,
+                                którzy z pasją przekazują więdzę i czerpią radość z postępów kursantów.</p>
                               <div class="primary-button">
                                 <a href="#">Odkryj więcej</a>
                               </div>
@@ -106,7 +108,9 @@ https://templatemo.com/tm-503-newline
                           <div class="col-md-7">
                             <div class="left-about-text">
                               <h4>Co robimy?</h4>
-                              <p>Nam aliquam ultrices interdum. Vivamus metus mi, accumsan a tincidunt a, efficitur id felis. Vivamus non nibh malesuada, vestibulum nulla in, iaculis sem. Aenean tincidunt faucibus ipsum, ac aliquet nunc accumsan sed. Nulla sodales nunc sit amet libero egestas, ut interdum ex congue.</p>
+                              <p>Szkolimy a jak! W wielu różnych dziedzinach jeśli chcesz sprawdzić nasze obecne projekty
+                                  koniecznie zajrzyj do działu PROJEKTY. Dla nas Twój wiek się nie liczy, mamy możliwość
+                                  zorganizowania szkoleń dla prawie każdej grupy wiekowej.</p>
                               <div class="primary-button">
                                 <a href="#">Odkryj więcej</a>
                               </div>
@@ -289,15 +293,17 @@ https://templatemo.com/tm-503-newline
         <footer>
           <p>Copyright &copy; 2020 UW Seriws Centrum Szkoleniowe
                                 
-        	| Edited by <em>konfle</em></p>
+            | Edited by <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/konrad-flejter/"><em>konfle</em></a></p>
         </footer>
     
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="{ % static 'js/vendor/jquery-1.11.2.min.js' %}"><\/script>')</script>
 
         <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/plugins.js' %}"></script>
         <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'bjax/bjax.min.js' %}" type="text/javascript"></script>
+        <script>$('[data-bjax]').bjax();</script>
 
     </body>
 </html>

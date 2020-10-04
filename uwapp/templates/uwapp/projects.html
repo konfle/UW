@@ -21,13 +21,20 @@
                               Jeśli jesteś zainteresowany nie czekaj! Może to właśnie dziś rozpoczniesz swoją nową
                                 ścieżkę zawodową.</p>
                               <div class="feature-list">
-                                {% for post in posts %}
-                                  <div>
-                                    <h4><em>{{ post.title }}</em></h4>
-                                    <p>{{ post.text|linebreaksbr }}</p>
-                                    <p>Opublikowano dnia {{ post.published_date }}</p>
-                                  </div>
-                                {% endfor %}
+                                {% if not posts %}
+                                  <h4>Projekty: <em>brak</em></h4>
+                                        <p>Niestety na tą chwilę nie mamy w ofercie żadnych projektów. Zachęcamy do
+                                          odwiedzania strony i sprawdzanie dostępności projektów.</p>
+                                {% else %}
+                                  {% for post in posts %}
+                                    <div>
+                                      <h4><em>{{ post.title }}</em></h4>
+                                      <p>{{ post.text|linebreaksbr }}</p>
+                                      <p>Opublikowano dnia {{ post.published_date }}</p>
+                                    </div>
+                                  {% endfor %}
+                                {% endif %}
+
                                 <!--
                                   <ul>
                                     <p>- cos tam cos tam</p>

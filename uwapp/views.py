@@ -4,8 +4,7 @@ from django.utils import timezone
 
 
 def index(request):
-    posts = PostTraining.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, "uwapp/index.html", {'posts': posts})
+    return render(request, "uwapp/index.html", {})
 
 
 def about(request):
@@ -13,7 +12,8 @@ def about(request):
 
 
 def projects(request):
-    return render(request, "uwapp/projects.html", {})
+    posts = PostTraining.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, "uwapp/projects.html", {'posts': posts})
 
 
 def gallery(request):

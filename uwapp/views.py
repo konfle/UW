@@ -31,7 +31,7 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            return render(request, 'uwapp/index.html', {})
+            return render(request, 'uwapp/contact_ok.html', {})
     else:
         form = ContactForm()
     return render(request, 'uwapp/contact.html', {'form': form})

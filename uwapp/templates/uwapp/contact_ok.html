@@ -1,0 +1,25 @@
+{% extends 'uwapp/base.html' %}<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<li class="selected">
+              <div class="heading">
+                <h1>UW SERWIS</h1>
+                <span>Centrum Szkoleniowe</span>
+              </div>
+              <div class="cd-full-width first-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content first-content">
+                          <h4><em>Dziękujemy za kontakt!</em></h4>
+                        <p><b>Postaramy się odpowiedzieć na Twoją wiadomość jak najprędzej!</b></p>
+                        <div class="primary-button">
+                          <a href="{% url 'uwapp:index' %}" data-bjax>Strona główna</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+{% endblock %}
